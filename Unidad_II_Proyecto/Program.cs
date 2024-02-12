@@ -1,4 +1,4 @@
-namespace Unidad_I
+namespace Unidad_II_Proyecto
 {
     internal static class Program
     {
@@ -11,7 +11,7 @@ namespace Unidad_I
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form2());
+            Application.Run(new Form1());
         }
     }
 }
