@@ -4,6 +4,7 @@
     {
         public string? Tipo { get; set; }
         public string? Nombre { get; set; }
+        public string? Foto { get; set; }
 
         public override string ToString()
         {
