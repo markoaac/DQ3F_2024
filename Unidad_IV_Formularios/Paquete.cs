@@ -8,7 +8,7 @@ using MongoDB.Bson;
 
 namespace Unidad_IV_Formularios
 {
-    internal class Paquete
+    public class Paquete
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]

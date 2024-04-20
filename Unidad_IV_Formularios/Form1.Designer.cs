@@ -45,6 +45,8 @@
             menuStrip1 = new MenuStrip();
             accionesToolStripMenuItem = new ToolStripMenuItem();
             limpiarToolStripMenuItem = new ToolStripMenuItem();
+            button1 = new Button();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvPaquetes).BeginInit();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -154,10 +156,10 @@
             // dgvPaquetes
             // 
             dgvPaquetes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPaquetes.Location = new Point(426, 63);
+            dgvPaquetes.Location = new Point(426, 45);
             dgvPaquetes.Name = "dgvPaquetes";
             dgvPaquetes.RowHeadersWidth = 51;
-            dgvPaquetes.Size = new Size(715, 418);
+            dgvPaquetes.Size = new Size(715, 436);
             dgvPaquetes.TabIndex = 11;
             dgvPaquetes.Click += dgvPaquetes_Click;
             // 
@@ -208,11 +210,34 @@
             limpiarToolStripMenuItem.Text = "Limpiar";
             limpiarToolStripMenuItem.Click += limpiarToolStripMenuItem_Click;
             // 
+            // button1
+            // 
+            button1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(548, 506);
+            button1.Name = "button1";
+            button1.Size = new Size(161, 40);
+            button1.TabIndex = 15;
+            button1.Text = "Seleccionar";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_1;
+            // 
+            // button2
+            // 
+            button2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.Location = new Point(781, 506);
+            button2.Name = "button2";
+            button2.Size = new Size(161, 40);
+            button2.TabIndex = 16;
+            button2.Text = "Generar ruta";
+            button2.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1166, 580);
+            Controls.Add(button2);
+            Controls.Add(button1);
             Controls.Add(btnEliminar);
             Controls.Add(btnActualizar);
             Controls.Add(dgvPaquetes);
@@ -257,5 +282,7 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem accionesToolStripMenuItem;
         private ToolStripMenuItem limpiarToolStripMenuItem;
+        private Button button1;
+        private Button button2;
     }
 }

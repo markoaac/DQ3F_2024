@@ -8,6 +8,7 @@ namespace Unidad_IV_Formularios
         IMongoCollection<Paquete> paquetes; //Colección llamada paquetes
         string _idpaquete;
         string _idmongo;
+        List<Paquete> lista_paquetes;
         public Form1()
         {
             InitializeComponent();
@@ -19,6 +20,7 @@ namespace Unidad_IV_Formularios
             btnActualizar.Enabled = false;
             _idpaquete = "";
             _idmongo = "";
+            lista_paquetes = new List<Paquete>();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -121,6 +123,26 @@ namespace Unidad_IV_Formularios
         {
             Limpiar();
             Consultar();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if(_idmongo == string.Empty)
+            {
+                MessageBox.Show("No se ha seleccionado nada");
+            }
+            else
+            {
+                Paquete paq = paquetes
+                    .Find(x => x.Id == _idmongo)
+                    .FirstOrDefault();
+                if(paq != null)
+                {
+                    lista_paquetes.Add(paq);
+                    Consultar();
+                    Limpiar();
+                }
+            }
         }
     }
 }
