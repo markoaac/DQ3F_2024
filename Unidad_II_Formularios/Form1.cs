@@ -43,6 +43,7 @@ namespace Unidad_II_Formularios
                 mascotas += temp.Mascota.Nombre + Environment.NewLine;
             }
             txtMascotas.Text = mascotas;
+            
         }
     }
 }

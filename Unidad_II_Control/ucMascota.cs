@@ -26,6 +26,8 @@ namespace Unidad_II_Control
                         Image.FromFile(ofdCambiar.FileName);
                 Mascota.Foto = ofdCambiar.FileName;
             }
+           
         }
+
     }
 }

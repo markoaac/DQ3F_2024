@@ -1,4 +1,4 @@
-namespace Unidad_III_EjemploFormularios
+namespace Unidad_IV_Formularios
 {
     internal static class Program
     {
@@ -11,7 +11,7 @@ namespace Unidad_III_EjemploFormularios
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new frmPingPong());
+            Application.Run(new Form1());
         }
     }
 }
