@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
@@ -9,13 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MongoDB.Bson" Version="2.25.0" />
-    <PackageReference Include="MongoDB.Driver" Version="2.25.0" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Unidad_II_dll\Unidad_II_dll.csproj" />
-    <ProjectReference Include="..\Unidad_IV_Control\Unidad_IV_Control.csproj" />
   </ItemGroup>
 
 </Project>

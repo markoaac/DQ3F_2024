@@ -1,3 +1,4 @@
+using Unidad_II_dll;
 using MongoDB.Driver;
 namespace Unidad_IV_Formularios
 {
@@ -32,6 +33,7 @@ namespace Unidad_IV_Formularios
             p.Comprador = txtComprador.Text;
             p.Vendedor = txtVendedor.Text;
             p.Prioridad = txtPrioridad.Text;
+            p.Estatus = "En Proceso";
             paquetes.InsertOne(p);
             Consultar();
             Limpiar();
@@ -114,6 +116,7 @@ namespace Unidad_IV_Formularios
             p.Peso = decimal.Parse(txtPeso.Text);
             p.Vendedor = txtVendedor.Text;
             p.Direccion = txtDireccion.Text;
+            p.Estatus = "En proceso";
             paquetes.ReplaceOne(x => x.Id == _idmongo, p);
             Consultar();
             Limpiar();
@@ -123,11 +126,12 @@ namespace Unidad_IV_Formularios
         {
             Limpiar();
             Consultar();
+            lista_paquetes.Clear();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            if(_idmongo == string.Empty)
+            if (_idmongo == string.Empty)
             {
                 MessageBox.Show("No se ha seleccionado nada");
             }
@@ -136,13 +140,33 @@ namespace Unidad_IV_Formularios
                 Paquete paq = paquetes
                     .Find(x => x.Id == _idmongo)
                     .FirstOrDefault();
-                if(paq != null)
+                if (paq != null)
                 {
-                    lista_paquetes.Add(paq);
-                    Consultar();
-                    Limpiar();
+                    if(paq.Estatus == "Entregado")
+                    {
+                        MessageBox.Show("El paquete ya fue entregado");
+                    }
+                    else
+                    {
+                        if (lista_paquetes.Any(p => p.Id == paq.Id))
+                        {
+                            MessageBox.Show("El paquete ya esta en ruta");
+                        }
+                        else
+                        {
+                            lista_paquetes.Add(paq);
+                            Consultar();
+                            Limpiar();
+                        }
+                    }
                 }
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmRuta f = new frmRuta(lista_paquetes);
+            f.ShowDialog();
         }
     }
 }

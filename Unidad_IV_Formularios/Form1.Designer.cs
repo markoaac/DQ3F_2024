@@ -47,6 +47,7 @@
             limpiarToolStripMenuItem = new ToolStripMenuItem();
             button1 = new Button();
             button2 = new Button();
+            contenedor = new FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)dgvPaquetes).BeginInit();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -159,7 +160,7 @@
             dgvPaquetes.Location = new Point(426, 45);
             dgvPaquetes.Name = "dgvPaquetes";
             dgvPaquetes.RowHeadersWidth = 51;
-            dgvPaquetes.Size = new Size(715, 436);
+            dgvPaquetes.Size = new Size(715, 90);
             dgvPaquetes.TabIndex = 11;
             dgvPaquetes.Click += dgvPaquetes_Click;
             // 
@@ -213,7 +214,7 @@
             // button1
             // 
             button1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(548, 506);
+            button1.Location = new Point(562, 528);
             button1.Name = "button1";
             button1.Size = new Size(161, 40);
             button1.TabIndex = 15;
@@ -224,18 +225,29 @@
             // button2
             // 
             button2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.Location = new Point(781, 506);
+            button2.Location = new Point(784, 528);
             button2.Name = "button2";
             button2.Size = new Size(161, 40);
             button2.TabIndex = 16;
             button2.Text = "Generar ruta";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // contenedor
+            // 
+            contenedor.AutoScroll = true;
+            contenedor.BorderStyle = BorderStyle.Fixed3D;
+            contenedor.Location = new Point(426, 141);
+            contenedor.Name = "contenedor";
+            contenedor.Size = new Size(715, 379);
+            contenedor.TabIndex = 17;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1166, 580);
+            Controls.Add(contenedor);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(btnEliminar);
@@ -284,5 +296,6 @@
         private ToolStripMenuItem limpiarToolStripMenuItem;
         private Button button1;
         private Button button2;
+        private FlowLayoutPanel contenedor;
     }
 }

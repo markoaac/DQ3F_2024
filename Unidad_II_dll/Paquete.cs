@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Bson;
 
-namespace Unidad_IV_Formularios
+namespace Unidad_II_dll
 {
     public class Paquete
     {
@@ -25,5 +25,7 @@ namespace Unidad_IV_Formularios
         public string? Vendedor { get; set; }
         [BsonElement("prioridad")]
         public string? Prioridad { get; set; }
+        [BsonElement("estatus")]
+        public string? Estatus { get; set; }
     }
 }

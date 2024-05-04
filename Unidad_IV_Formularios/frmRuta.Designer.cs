@@ -71,6 +71,7 @@
             button2.TabIndex = 17;
             button2.Text = "Guardar ruta";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // frmRuta
             // 
